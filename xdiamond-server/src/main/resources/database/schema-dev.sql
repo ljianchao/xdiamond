@@ -25,6 +25,19 @@ CREATE TABLE `config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Table structure for config_version
+-- ----------------------------
+DROP TABLE IF EXISTS `config_version`;
+CREATE TABLE `config_version` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `configId` int NOT NULL,
+    `value` mediumtext,
+    `version` varchar(50) DEFAULT NULL,
+    `createTime` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    KEY `configId` (`configId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ----------------------------
 -- Table structure for dependency
 -- ----------------------------
 DROP TABLE IF EXISTS `dependency`;
